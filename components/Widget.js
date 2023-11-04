@@ -3,7 +3,7 @@ import React from 'react'
 const Widget = () => {
   return (
     <>
-        <div className="flex flex-col w-[75%]">
+        <form className="flex flex-col w-[75%]">
           <div className="flex items-center justify-center w-full">
             <input 
                 id="search"
@@ -37,7 +37,7 @@ const Widget = () => {
               <label className="ml-2">All</label>
             </aside>
           </section>
-        </div>
+        </form>
     </>
   )
 }

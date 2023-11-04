@@ -12,6 +12,10 @@ export default function Home() {
         <main>
           <div className="pt-20">
             <Cards />
+            <Cards />
+            <Cards />
+            <Cards />
+            <Cards />
           </div>
         </main>
       </>
