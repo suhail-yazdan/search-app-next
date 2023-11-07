@@ -1,15 +1,14 @@
-"use client"
 import React, {useState} from 'react'
 import { FaBusSimple, FaPlaneUp, FaHotel, FaChessBoard } from "react-icons/fa6";
 
 
-const Widget = () => {
+const Widget = (props) => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const bringSuggestion = () => {
-    setDropdownVisible(!dropdownVisible)
+    setDropdownVisible(true)
   }
 
   const hideSuggestion = () => {
@@ -28,14 +27,14 @@ const Widget = () => {
                 autoComplete='off'
                 className='w-full h-[40px] border border-solid rounded-l-3xl shadow-lg ps-5'
                 onChange = {(e) => setSearchQuery(e.target.value)}
-                onClick={bringSuggestion}
+                onFocus={bringSuggestion}
             />
 
             <input 
                 type="button"
                 className='h-[40px] px-20 rounded-r-3xl cursor-pointer bg-gray-200 hover:bg-gray-300 border-l border-gray-400'
                 value="Submit"
-                onClick={hideSuggestion}
+                onClick={() => {props.onSubmit(selectedCategory, searchQuery); hideSuggestion()}}
             />
           </div>
 
